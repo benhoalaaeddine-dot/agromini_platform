@@ -1,5 +1,4 @@
-const API_URL = "http://localhost:3000/api";
-
+const API_URL = "https://agromini-platform.onrender.com/api";
 let allProducts = [];
 
 async function login() {
