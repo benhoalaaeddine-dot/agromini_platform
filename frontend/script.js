@@ -25,6 +25,18 @@ const translations = {
     low_stock: "⚠️ Stock faible",
     logout: "Déconnexion",
   },
+
+  ar: {
+    dashboard_title: "لوحة تحكم Crop Pilot",
+    dashboard_subtitle:
+      "تابع المخزون، وأدر المنتجات، وراقب نشاطك الفلاحي في الوقت الحقيقي.",
+    total_products: "📦 إجمالي المنتجات",
+    inventory_weight: "⚖️ وزن المخزون",
+    stock_value: "💰 قيمة المخزون",
+    categories: "🌿 الفئات",
+    low_stock: "⚠️ مخزون منخفض",
+    logout: "تسجيل الخروج",
+  },
 };
 
 function applyTranslations() {
@@ -42,6 +54,8 @@ function applyTranslations() {
   if (languageSelect) {
     languageSelect.value = currentLanguage;
   }
+  document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
+  document.documentElement.lang = currentLanguage;
 }
 
 function changeLanguage() {
