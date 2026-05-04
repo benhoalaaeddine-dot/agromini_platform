@@ -2,12 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Login - AgroMini</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Crop Pilot</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body class="login-page">
     <div class="login-card">
-      <h2>Login</h2>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 18px;
+        "
+      >
+        <div
+          style="
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            color: white;
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            box-shadow: 0 14px 30px rgba(34, 197, 94, 0.22);
+          "
+        >
+          CP
+        </div>
+
+        <div>
+          <div
+            style="
+              font-size: 24px;
+              font-weight: 800;
+              color: #14532d;
+              letter-spacing: -0.8px;
+            "
+          >
+            Crop Pilot
+          </div>
+          <div style="font-size: 13px; color: #64748b">
+            Smart Agriculture Management
+          </div>
+        </div>
+      </div>
+
+      <h2>Welcome Back</h2>
+      <p style="margin-top: -8px; margin-bottom: 22px; color: #64748b">
+        Sign in to manage your inventory, products, and crop operations.
+      </p>
 
       <input type="text" id="username" placeholder="Username" />
       <input type="password" id="password" placeholder="Password" />
@@ -16,7 +70,7 @@
 
       <p id="login-message"></p>
 
-      <small>Test account: admin / 1234</small>
+      <small>Demo access: admin / 1234</small>
     </div>
 
     <script src="script.js"></script>
