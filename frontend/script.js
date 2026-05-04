@@ -1,6 +1,56 @@
 const API_URL = "https://agromini-platform.onrender.com/api";
 
 let allProducts = [];
+const translations = {
+  en: {
+    dashboard_title: "Crop Pilot Dashboard",
+    dashboard_subtitle:
+      "Track inventory, manage products, and monitor your farm activity in real time.",
+    total_products: "📦 Total Products",
+    inventory_weight: "⚖️ Inventory Weight",
+    stock_value: "💰 Stock Value",
+    categories: "🌿 Categories",
+    low_stock: "⚠️ Low Stock",
+    logout: "Logout",
+  },
+
+  fr: {
+    dashboard_title: "Tableau de bord Crop Pilot",
+    dashboard_subtitle:
+      "Suivez le stock, gérez les produits et surveillez votre activité agricole en temps réel.",
+    total_products: "📦 Produits totaux",
+    inventory_weight: "⚖️ Poids du stock",
+    stock_value: "💰 Valeur du stock",
+    categories: "🌿 Catégories",
+    low_stock: "⚠️ Stock faible",
+    logout: "Déconnexion",
+  },
+};
+
+function applyTranslations() {
+  const currentLanguage = localStorage.getItem("language") || "en";
+  const langData = translations[currentLanguage];
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+    if (langData[key]) {
+      element.textContent = langData[key];
+    }
+  });
+
+  const languageSelect = document.getElementById("languageSelect");
+  if (languageSelect) {
+    languageSelect.value = currentLanguage;
+  }
+}
+
+function changeLanguage() {
+  const languageSelect = document.getElementById("languageSelect");
+  const selectedLanguage = languageSelect.value;
+
+  localStorage.setItem("language", selectedLanguage);
+  applyTranslations();
+}
 
 /* =========================
    HELPERS
@@ -304,6 +354,8 @@ document.addEventListener("mousemove", function (event) {
    INIT
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
+  applyTranslations();
+
   if (window.location.pathname.includes("dashboard.html")) {
     loadProducts();
   }
